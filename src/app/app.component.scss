@@ -1,0 +1,10 @@
+.toolbar {
+  justify-content: space-around;
+  a {
+    color: black;
+
+    &.active {
+      color: #fff;
+    }
+  }
+}
