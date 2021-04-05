@@ -8,16 +8,18 @@ import { CarsDoneComponent } from "./components/cars-done/cars-done.component";
 import { MatTableModule } from "@angular/material/table";
 import { AppRoutingModule } from "./app-routing.module";
 import { MatDialogModule } from "@angular/material/dialog";
-import { DialogOverviewExample } from "./components/create-car-dialog/create-car-dialog.component";
+import { CreateCarDialogComponent } from "./components/create-car-dialog/create-car-dialog.component";
 import { MatButtonModule } from "@angular/material/button";
 import { FormsModule } from "@angular/forms";
+import { MatFormFieldModule } from "@angular/material/form-field";
+import { MatInputModule } from "@angular/material/input";
 
 @NgModule({
   declarations: [
     AppComponent,
     CarsActiveComponent,
     CarsDoneComponent,
-    DialogOverviewExample,
+    CreateCarDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -28,6 +30,8 @@ import { FormsModule } from "@angular/forms";
     MatDialogModule,
     MatButtonModule,
     FormsModule,
+    MatFormFieldModule,
+    MatInputModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -1,4 +1,20 @@
 
-<!-- <dialog-overview-example-dialog></dialog-overview-example-dialog> -->
-<button mat-raised-button (click)="openDialog()">Добавить машину</button>
-<p *ngIf = "model">{{model}}</p>
+<h1 mat-dialog-title>Добавить машину в очередь на ТО</h1>
+<div mat-dialog-content>
+  <mat-form-field appearance="fill">
+    <mat-label>Ваше ФИО</mat-label>
+    <input matInput [(ngModel)]="data.user" >
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Модель машины</mat-label>
+    <input matInput [(ngModel)]="data.model" >
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Причина обращения</mat-label>
+    <input matInput [(ngModel)]="data.problem">
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+    <button mat-button (click)="onClose()">Отмена</button>
+    <button mat-button [mat-dialog-close]="data" cdkFocusInitial class="onContinue()">Добавить</button>
+  </div>

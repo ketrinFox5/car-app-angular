@@ -1,48 +1,29 @@
-import { Component, Inject } from "@angular/core";
+import { Component, Inject, OnInit } from "@angular/core";
 import {
   MatDialog,
   MatDialogRef,
   MAT_DIALOG_DATA,
 } from "@angular/material/dialog";
-import { DialogData } from "src/app/common/models/dialog-data";
+import { Car } from "src/app/common/models/car";
 
 @Component({
-  selector: "dialog-overview-example",
+  selector: "create-car-dialog",
   templateUrl: "create-car-dialog.component.html",
+  styleUrls: ["create-car-dialog.component.scss"],
 })
-export class DialogOverviewExample {
-  user: string;
-  problem: string;
-  model: string;
-
-  constructor(public dialog: MatDialog) {}
-
-  openDialog(): void {
-    const dialogRef = this.dialog.open(DialogOverviewExampleDialog, {
-      width: "500px",
-      //   data: { name: this.name, animal: this.animal },
-    });
-
-    dialogRef.afterClosed().subscribe((result) => {
-      console.log("The dialog was closed");
-      this.user = result.user;
-      this.model = result.model;
-      this.problem = result.problem;
-    });
-  }
-}
-
-@Component({
-  selector: "dialog-overview-example-dialog",
-  templateUrl: "dialog-overview-example-dialog.html",
-})
-export class DialogOverviewExampleDialog {
+export class CreateCarDialogComponent implements OnInit {
   constructor(
-    public dialogRef: MatDialogRef<DialogOverviewExampleDialog>,
-    @Inject(MAT_DIALOG_DATA) public data: DialogData
+    public dialogRef: MatDialogRef<CreateCarDialogComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: Car
   ) {}
 
-  onNoClick(): void {
-    this.dialogRef.close();
+  ngOnInit(): void {}
+
+  onClose(): void {
+    this.dialogRef.close(false);
+  }
+
+  onContinue(): void {
+    this.dialogRef.close(true);
   }
 }

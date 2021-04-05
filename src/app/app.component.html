@@ -308,12 +308,10 @@
 <div class="toolbar" role="banner">
     <a routerLink="active-cars" routerLinkActive="active">Активные машины</a>
     <a routerLink="done-cars" routerLinkActive="active">Завершенные машины</a>
-    <dialog-overview-example></dialog-overview-example>
+    <button mat-raised-button (click)="openDialog()">Добавить машину</button>
 </div>
 <div>
   <router-outlet></router-outlet>
-  <!-- <app-cars-active [cars]="cars"></app-cars-active>
-  <app-cars-done></app-cars-done> -->
 </div>
 
 
