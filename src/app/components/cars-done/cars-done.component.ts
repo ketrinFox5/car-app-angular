@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { Car } from "src/app/common/models/car";
-import { GetCarsService } from "src/app/common/service/get-cars.service";
+import { GetCarsService } from "src/app/common/services/get-cars.service";
 
 @Component({
   selector: "app-cars-done",
@@ -9,9 +9,15 @@ import { GetCarsService } from "src/app/common/service/get-cars.service";
 })
 export class CarsDoneComponent implements OnInit {
   carsDone: Car[] = [];
-  displayedColumns: string[] = ["model", "user", "problem"];
-  constructor(private httpService: GetCarsService) {
-    this.carsDone = httpService.carsCompleted;
+  displayedColumns: string[] = [
+    "userName",
+    "userPhone",
+    "carModel",
+    "carNumber",
+    "problem",
+  ];
+  constructor(private getCars: GetCarsService) {
+    this.carsDone = getCars.carsCompleted;
   }
   private setCarsDone(cars: Car[]) {
     this.carsDone = cars;

@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { Car } from "src/app/common/models/car";
-import { GetCarsService } from "src/app/common/service/get-cars.service";
+import { GetCarsService } from "src/app/common/services/get-cars.service";
 
 @Component({
   selector: "app-cars-active",
@@ -12,14 +12,16 @@ export class CarsActiveComponent implements OnInit {
 
   displayedColumns: string[] = [
     "position",
-    "model",
-    "user",
+    "userName",
+    "userPhone",
+    "carModel",
+    "carNumber",
     "problem",
     "isCompleted",
   ];
 
-  constructor(private httpService: GetCarsService) {
-    this.cars = httpService.cars;
+  constructor(private getCars: GetCarsService) {
+    this.cars = getCars.cars;
   }
 
   setCars(cars: Car[]) {
@@ -33,8 +35,8 @@ export class CarsActiveComponent implements OnInit {
     const resultCars: Car[] = this.cars.filter((item) => {
       return item.position != position;
     });
-    this.httpService.carsCompleted.push(carCompleted);
-    this.httpService.setCarsService(resultCars);
+    this.getCars.carsCompleted.push(carCompleted);
+    this.getCars.setCarsService(resultCars);
     return this.setCars(resultCars);
   }
 }

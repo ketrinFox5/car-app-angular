@@ -1,34 +1,49 @@
 {
     "carList": [
         {   
+            "id": 89276515125,
             "position": 1,
-            "model": "Nissan",
-            "user": "Иван Тест1",
-            "problem": "Разбито заднее стекло"
+            "carModel": "Nissan",
+            "userName": "Иван Тест1",
+            "userPhone": "89276515125",
+            "problem": "Разбито заднее стекло",
+            "carNumber": "П147ТП"
         },
         {
+            "id": 89276543125,
             "position": 2,
-            "model": "Nissan",
-            "user": "Иван Тест2",
-            "problem": "Разбито заднее стекло"
+            "carModel": "Nissan",
+            "userName": "Иван Тест2",
+            "userPhone": "89276543125",
+            "problem": "Разбито заднее стекло",
+            "carNumber": "У147ТП"
         },
         {
+            "id": 89276545165,
             "position": 3,
-            "model": "Nissan",
-            "user": "Иван Тест3",
-            "problem": "Разбито заднее стекло"
+            "carModel": "Nissan",
+            "userName": "Иван Тест3",
+            "userPhone": "89276545165",
+            "problem": "Разбито заднее стекло",
+            "carNumber": "П147ТК"
         }
     ],
     "carsCompleted": [
         {
-            "model": "Nissan",
-            "user": "Иван Тест4",
-            "problem": "Разбито заднее стекло"
+            "id": 89278545125,
+            "carModel": "Nissan",
+            "userName": "Иван Тест4",
+            "userPhone": "89278545125",
+            "problem": "Разбито заднее стекло",
+            "carNumber": "П147ГП"
           },
           {
-            "model": "Nissan",
-            "user": "Иван Тест5",
-            "problem": "Разбито заднее стекло"
+            "id": 89276545145,
+            "carModel": "Nissan",
+            "userName": "Иван Тест5",
+            "userPhone": "89276545145",
+            "problem": "Разбито заднее стекло",
+            "carNumber": "П147ТМ"
           }
     ]
 }

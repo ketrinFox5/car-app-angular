@@ -1,6 +1,6 @@
 import { Component } from "@angular/core";
 import { Car } from "./common/models/car";
-import { GetCarsService } from "./common/service/get-cars.service";
+import { GetCarsService } from "./common/services/get-cars.service";
 import { MatDialog } from "@angular/material/dialog";
 import { CreateCarDialogComponent } from "./components/create-car-dialog/create-car-dialog.component";
 
@@ -11,30 +11,37 @@ import { CreateCarDialogComponent } from "./components/create-car-dialog/create-
 })
 export class AppComponent {
   car: Car;
-  user: string;
-  model: string;
+  userName: string;
+  userPhone: string;
+  carNumber: string;
+  carModel: string;
   problem: string;
 
-  constructor(private httpService: GetCarsService, private dialog: MatDialog) {}
+  constructor(private getCars: GetCarsService, private dialog: MatDialog) {}
 
   ngOnInit() {
-    this.httpService.getData().subscribe();
-    this.httpService.getDataDoneCars().subscribe();
+    this.getCars.getData().subscribe();
+    this.getCars.getDataDoneCars().subscribe();
   }
 
   openDialog(): void {
     const dialogRef = this.dialog.open(CreateCarDialogComponent, {
       width: "500px",
-      data: { user: this.user, model: this.model, problem: this.problem },
+      data: {
+        username: this.userName,
+        userPhone: this.userPhone,
+        carModel: this.carModel,
+        problem: this.problem,
+        carNamber: this.carNumber,
+      },
     });
 
     dialogRef.afterClosed().subscribe((result: Car) => {
       console.log("The dialog was closed");
-      const isEverythingIsFilled = Object.values(result).every(Boolean);
-      if (result && isEverythingIsFilled) {
+      if (result) {
         this.car = result;
         console.log(this.car);
-        this.httpService.cars.push(this.car);
+        this.getCars.cars.push(this.car);
       }
     });
   }
