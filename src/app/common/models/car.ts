@@ -1,6 +1,6 @@
 export interface Car {
   position?: number;
-  id: number;
+  id: string;
   carModel: string;
   userName: string;
   userPhone: string;

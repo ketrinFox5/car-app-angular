@@ -14,12 +14,13 @@ const routes: Routes = [
   },
   {
     path: "",
-    component: CarsActiveComponent,
+    pathMatch: "full",
+    redirectTo: "active-cars",
   },
   {
     path: "**",
     pathMatch: "full",
-    redirectTo: "/",
+    redirectTo: "active-cars",
   },
 ];
 

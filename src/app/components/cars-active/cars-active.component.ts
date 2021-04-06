@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { Car } from "src/app/common/models/car";
 import { GetCarsService } from "src/app/common/services/get-cars.service";
+import { Observable } from "rxjs";
 
 @Component({
   selector: "app-cars-active",
@@ -8,7 +9,7 @@ import { GetCarsService } from "src/app/common/services/get-cars.service";
   styleUrls: ["./cars-active.component.scss"],
 })
 export class CarsActiveComponent implements OnInit {
-  cars: Car[] = [];
+  public cars$: Observable<Car[]>;
 
   displayedColumns: string[] = [
     "position",
@@ -21,22 +22,16 @@ export class CarsActiveComponent implements OnInit {
   ];
 
   constructor(private getCars: GetCarsService) {
-    this.cars = getCars.cars;
+    this.cars$ = getCars.cars$.asObservable();
   }
 
   setCars(cars: Car[]) {
-    this.cars = cars;
+    // this.cars = cars;
   }
 
   ngOnInit() {}
 
-  carCompleted(position: number) {
-    const carCompleted = this.cars.find((item) => item.position == position);
-    const resultCars: Car[] = this.cars.filter((item) => {
-      return item.position != position;
-    });
-    this.getCars.carsCompleted.push(carCompleted);
-    this.getCars.setCarsService(resultCars);
-    return this.setCars(resultCars);
+  carCompleted(id: string) {
+    return this.getCars.completedCar(id);
   }
 }

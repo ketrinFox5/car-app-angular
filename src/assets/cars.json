@@ -2,7 +2,6 @@
     "carList": [
         {   
             "id": 89276515125,
-            "position": 1,
             "carModel": "Nissan",
             "userName": "Иван Тест1",
             "userPhone": "89276515125",
@@ -11,7 +10,6 @@
         },
         {
             "id": 89276543125,
-            "position": 2,
             "carModel": "Nissan",
             "userName": "Иван Тест2",
             "userPhone": "89276543125",
@@ -20,7 +18,6 @@
         },
         {
             "id": 89276545165,
-            "position": 3,
             "carModel": "Nissan",
             "userName": "Иван Тест3",
             "userPhone": "89276545165",

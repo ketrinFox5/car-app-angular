@@ -10,12 +10,13 @@ import { CreateCarDialogComponent } from "./components/create-car-dialog/create-
   styleUrls: ["./app.component.scss"],
 })
 export class AppComponent {
-  car: Car;
-  userName: string;
-  userPhone: string;
-  carNumber: string;
-  carModel: string;
-  problem: string;
+  // car: Car;
+  // id: string;
+  // userName: string;
+  // userPhone: string;
+  // carNumber: string;
+  // carModel: string;
+  // problem: string;
 
   constructor(private getCars: GetCarsService, private dialog: MatDialog) {}
 
@@ -28,20 +29,18 @@ export class AppComponent {
     const dialogRef = this.dialog.open(CreateCarDialogComponent, {
       width: "500px",
       data: {
-        username: this.userName,
-        userPhone: this.userPhone,
-        carModel: this.carModel,
-        problem: this.problem,
-        carNamber: this.carNumber,
+        // id: this.userPhone,
+        // username: this.userName,
+        // userPhone: this.userPhone,
+        // carModel: this.carModel,
+        // problem: this.problem,
+        // carNamber: this.carNumber,
       },
     });
 
     dialogRef.afterClosed().subscribe((result: Car) => {
-      console.log("The dialog was closed");
       if (result) {
-        this.car = result;
-        console.log(this.car);
-        this.getCars.cars.push(this.car);
+        this.getCars.addCar(result);
       }
     });
   }

@@ -1,81 +1,48 @@
 
-<h1 mat-dialog-title>Добавить машину в очередь на ТО</h1>
+<h1 mat-dialog-title>Запись на техосмотр машины</h1>
 <div mat-dialog-content>
   <form [formGroup]="myForm">
-    <!-- <div class="form-group">
-      <label>Имя</label>
-      <input class="form-control" name="name" formControlName="userName" />
-        
+    <mat-form-field appearance="fill">
+      <mat-label>Ваше ФИО</mat-label>
+      <input matInput  [(ngModel)]="data.userName" class="form-control" name="name" formControlName="userName">
       <div class="alert alert-danger"
-          *ngIf="myForm.controls['userName'].invalid && myForm.controls['userName'].touched">
-          Не указано имя
+      *ngIf="myForm.controls['userName'].invalid && myForm.controls['userName'].touched">
+        Введите имя
       </div>
-  </div> -->
-  <mat-form-field appearance="fill">
-    <mat-label>Ваше ФИО</mat-label>
-    <input matInput  [(ngModel)]="data.userName" class="form-control" name="name" formControlName="userName">
-    <div class="alert alert-danger"
-    *ngIf="myForm.controls['userName'].invalid && myForm.controls['userName'].touched">
-      Введите имя
-    </div>
-  </mat-form-field>
-  <mat-form-field appearance="fill">
-    <mat-label>Ваш телефон</mat-label>
-    <input matInput  [(ngModel)]="data.userPhone" class="form-control" name="phone" formControlName="userPhone">
-    <div class="alert alert-danger"
-    *ngIf="myForm.controls['userPhone'].invalid && myForm.controls['userPhone'].touched">
-      Введите номер телефона
-    </div>
-  </mat-form-field>
-  <mat-form-field appearance="fill">
-    <mat-label>Модель машины</mat-label>
-    <input matInput  [(ngModel)]="data.carModel" class="form-control" name="model" formControlName="carModel">
-    <div class="alert alert-danger"
-    *ngIf="myForm.controls['carModel'].invalid && myForm.controls['carModel'].touched">
-      Введите модель машины
-    </div>
-  </mat-form-field>
-  <mat-form-field appearance="fill">
-    <mat-label>Номер машины</mat-label>
-    <input matInput  [(ngModel)]="data.carNumber" class="form-control" name="carNumber" formControlName="carNumber">
-    <div class="alert alert-danger"
-    *ngIf="myForm.controls['carNumber'].invalid && myForm.controls['carNumber'].touched">
-      Введите номер машины
-    </div>
-  </mat-form-field>
-  <mat-form-field appearance="fill">
-    <mat-label>Причина обращения</mat-label>
-    <input matInput  [(ngModel)]="data.problem" class="form-control" name="problem" formControlName="problem">
-    <div class="alert alert-danger"
-    *ngIf="myForm.controls['problem'].invalid && myForm.controls['problem'].touched">
-      Введите причину
-    </div>
-  </mat-form-field>
-  <!-- <mat-form-field appearance="fill">
-    <mat-label>Причина обращения</mat-label>
-    <input matInput [(ngModel)]="data.problem">
-  </mat-form-field>
-  <mat-form-field appearance="fill">
-    <mat-label>Модель машины</mat-label>
-    <input matInput [(ngModel)]="data.carModel" >
-  </mat-form-field>
-  <mat-form-field appearance="fill">
-    <mat-label>Причина обращения</mat-label>
-    <input matInput [(ngModel)]="data.problem">
-  </mat-form-field> -->
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Ваш телефон</mat-label>
+      <input matInput  [(ngModel)]="data.userPhone" class="form-control" name="phone" formControlName="userPhone">
+      <div class="alert alert-danger"
+      *ngIf="myForm.controls['userPhone'].invalid && myForm.controls['userPhone'].touched">
+        Введите номер телефона
+      </div>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Модель машины</mat-label>
+      <input matInput  [(ngModel)]="data.carModel" class="form-control" name="model" formControlName="carModel">
+      <div class="alert alert-danger"
+      *ngIf="myForm.controls['carModel'].invalid && myForm.controls['carModel'].touched">
+        Введите модель машины
+      </div>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Номер машины</mat-label>
+      <input matInput  [(ngModel)]="data.carNumber" class="form-control" name="carNumber" formControlName="carNumber">
+      <div class="alert alert-danger"
+      *ngIf="myForm.controls['carNumber'].invalid && myForm.controls['carNumber'].touched">
+        Введите номер машины
+      </div>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Причина обращения</mat-label>
+      <input matInput  [(ngModel)]="data.problem" class="form-control" name="problem" formControlName="problem">
+      <div class="alert alert-danger"
+      *ngIf="myForm.controls['problem'].invalid && myForm.controls['problem'].touched">
+        Введите причину
+      </div>
+    </mat-form-field>
   </form>
-  <!-- <mat-form-field appearance="fill">
-    <mat-label>Ваше ФИО</mat-label>
-    <input matInput [(ngModel)]="data.userName" >
-  </mat-form-field>
-  <mat-form-field appearance="fill">
-    <mat-label>Модель машины</mat-label>
-    <input matInput [(ngModel)]="data.carModel" >
-  </mat-form-field>
-  <mat-form-field appearance="fill">
-    <mat-label>Причина обращения</mat-label>
-    <input matInput [(ngModel)]="data.problem">
-  </mat-form-field> -->
 </div>
 <div mat-dialog-actions>
     <button mat-button (click)="onClose()">Отмена</button>
