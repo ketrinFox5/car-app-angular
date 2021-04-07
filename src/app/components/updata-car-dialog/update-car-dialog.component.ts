@@ -1,4 +1,4 @@
-import { Component, Inject, OnInit } from "@angular/core";
+import { Component, Inject, OnInit, Input } from "@angular/core";
 import {
   MatDialog,
   MatDialogRef,
@@ -13,15 +13,16 @@ import {
 } from "src/app/common/cosnt/patterns";
 
 @Component({
-  selector: "create-car-dialog",
-  templateUrl: "create-car-dialog.component.html",
-  styleUrls: ["create-car-dialog.component.scss"],
+  selector: "update-car-dialog",
+  templateUrl: "update-car-dialog.component.html",
+  styleUrls: ["update-car-dialog.component.scss"],
 })
-export class CreateCarDialogComponent implements OnInit {
+export class UpdateCarDialogComponent implements OnInit {
+  @Input() car: Car;
   myForm: FormGroup;
 
   constructor(
-    public dialogRef: MatDialogRef<CreateCarDialogComponent>,
+    public dialogRef: MatDialogRef<UpdateCarDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: Car
   ) {
     this.myForm = new FormGroup({
@@ -48,7 +49,7 @@ export class CreateCarDialogComponent implements OnInit {
     this.dialogRef.close(false);
   }
 
-  onContinue(): void {
+  onSave(): void {
     this.dialogRef.close(true);
   }
 }

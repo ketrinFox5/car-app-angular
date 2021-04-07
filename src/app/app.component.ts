@@ -3,6 +3,7 @@ import { Car } from "./common/models/car";
 import { GetCarsService } from "./common/services/get-cars.service";
 import { MatDialog } from "@angular/material/dialog";
 import { CreateCarDialogComponent } from "./components/create-car-dialog/create-car-dialog.component";
+import { UpdateCarDialogComponent } from "./components/updata-car-dialog/update-car-dialog.component";
 
 @Component({
   selector: "app-root",

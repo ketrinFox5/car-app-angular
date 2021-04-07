@@ -14,6 +14,7 @@ import { FormsModule } from "@angular/forms";
 import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatInputModule } from "@angular/material/input";
 import { ReactiveFormsModule } from "@angular/forms";
+import { UpdateCarDialogComponent } from "./components/updata-car-dialog/update-car-dialog.component";
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { ReactiveFormsModule } from "@angular/forms";
     CarsActiveComponent,
     CarsDoneComponent,
     CreateCarDialogComponent,
+    UpdateCarDialogComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,4 @@
 export interface Car {
-  position?: number;
   id: string;
   carModel: string;
   userName: string;

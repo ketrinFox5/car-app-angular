@@ -1,46 +1,46 @@
 {
     "carList": [
         {   
-            "id": 89276515125,
+            "id": "+79276515125",
             "carModel": "Nissan",
-            "userName": "Иван Тест1",
-            "userPhone": "89276515125",
+            "userName": "Иван Тест",
+            "userPhone": "+79276515125",
             "problem": "Разбито заднее стекло",
-            "carNumber": "П147ТП"
+            "carNumber": "п146тп63"
         },
         {
-            "id": 89276543125,
+            "id": "89276543125",
             "carModel": "Nissan",
-            "userName": "Иван Тест2",
+            "userName": "Иван Тест",
             "userPhone": "89276543125",
             "problem": "Разбито заднее стекло",
-            "carNumber": "У147ТП"
+            "carNumber": "у127тп63"
         },
         {
-            "id": 89276545165,
+            "id": "89276545165",
             "carModel": "Nissan",
-            "userName": "Иван Тест3",
+            "userName": "Иван Тест",
             "userPhone": "89276545165",
             "problem": "Разбито заднее стекло",
-            "carNumber": "П147ТК"
+            "carNumber": "а747ек163"
         }
     ],
     "carsCompleted": [
         {
-            "id": 89278545125,
+            "id": "+79278545125",
             "carModel": "Nissan",
-            "userName": "Иван Тест4",
-            "userPhone": "89278545125",
+            "userName": "Иван Тест",
+            "userPhone": "+79278545125",
             "problem": "Разбито заднее стекло",
-            "carNumber": "П147ГП"
+            "carNumber": "к165го163"
           },
           {
-            "id": 89276545145,
+            "id": "89276545145",
             "carModel": "Nissan",
-            "userName": "Иван Тест5",
+            "userName": "Иван Тест",
             "userPhone": "89276545145",
             "problem": "Разбито заднее стекло",
-            "carNumber": "П147ТМ"
+            "carNumber": "ш642ти63"
           }
     ]
 }
