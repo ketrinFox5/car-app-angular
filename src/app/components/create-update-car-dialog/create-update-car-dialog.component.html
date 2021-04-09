@@ -1,0 +1,45 @@
+
+<h1 mat-dialog-title>Запись на техосмотр машины</h1>
+<div mat-dialog-content>
+  <form [formGroup]="carForm" (ngSubmit)='onSave()'>
+    <mat-form-field appearance="fill">
+      <mat-label>Ваше ФИО</mat-label>
+      <input matInput  class="form-control" name="name" formControlName="userName">
+      <mat-error *ngIf="carForm.controls['userName'].invalid && carForm.controls['userName'].touched">
+        Введите имя
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Ваш телефон</mat-label>
+      <input matInput   class="form-control" name="phone" formControlName="userPhone">
+      <mat-error *ngIf="carForm.controls['userPhone'].invalid && carForm.controls['userPhone'].touched">
+        Введите номер телефона
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Модель машины</mat-label>
+      <input matInput   class="form-control" name="model" formControlName="carModel">
+      <mat-error *ngIf="carForm.controls['carModel'].invalid && carForm.controls['carModel'].touched">
+        Введите модель машины
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Номер машины</mat-label>
+      <input matInput   class="form-control" name="carNumber" formControlName="carNumber">
+      <mat-error *ngIf="carForm.controls['carNumber'].invalid && carForm.controls['carNumber'].touched">
+        Введите номер машины
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Причина обращения</mat-label>
+      <input matInput   class="form-control" name="problem" formControlName="problem">
+      <mar-error *ngIf="carForm.controls['problem'].invalid && carForm.controls['problem'].touched">
+        Введите причину
+      </mar-error>
+    </mat-form-field>
+    <div mat-dialog-actions>
+      <button mat-button (click)="onClose()">Отмена</button>
+      <button type="submit" mat-button  cdkFocusInitial  [disabled]="carForm.invalid">Сохранить</button>
+    </div>
+  </form>
+</div>

@@ -8,21 +8,19 @@ import { CarsDoneComponent } from "./components/cars-done/cars-done.component";
 import { MatTableModule } from "@angular/material/table";
 import { AppRoutingModule } from "./app-routing.module";
 import { MatDialogModule } from "@angular/material/dialog";
-import { CreateCarDialogComponent } from "./components/create-car-dialog/create-car-dialog.component";
+import { CreateUpdateCarDialogComponent } from "./components/create-update-car-dialog/create-update-car-dialog.component";
 import { MatButtonModule } from "@angular/material/button";
 import { FormsModule } from "@angular/forms";
 import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatInputModule } from "@angular/material/input";
 import { ReactiveFormsModule } from "@angular/forms";
-import { UpdateCarDialogComponent } from "./components/updata-car-dialog/update-car-dialog.component";
 
 @NgModule({
   declarations: [
     AppComponent,
     CarsActiveComponent,
     CarsDoneComponent,
-    CreateCarDialogComponent,
-    UpdateCarDialogComponent,
+    CreateUpdateCarDialogComponent,
   ],
   imports: [
     BrowserModule,

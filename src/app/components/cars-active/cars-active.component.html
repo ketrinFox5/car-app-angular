@@ -1,11 +1,6 @@
 <div class="content-wrap">
     <h1>Список машин, записанных на ТО</h1>
   <table mat-table [dataSource]="cars$" class=" table mat-elevation-z8">
-    <ng-container matColumnDef="position">
-        <th mat-header-cell *matHeaderCellDef></th>
-        <td mat-cell *matCellDef="let element"> {{element.position}} </td>
-    </ng-container>
-
     <ng-container matColumnDef="userName">
         <th mat-header-cell *matHeaderCellDef>Владелец </th>
         <td mat-cell *matCellDef="let element"> {{element.userName}} </td>
@@ -33,7 +28,7 @@
     <ng-container matColumnDef="isCompleted">
         <th mat-header-cell *matHeaderCellDef></th>
         <td mat-cell *matCellDef="let element"> 
-          <button mat-button color="primary" (click)="openDialogUpdateCar(element)">Редактировать</button>  
+          <button mat-button color="primary" (click)="openDialog(element)">Редактировать</button>  
           <button mat-button color="accent" (click)="carCompleted(element.id)">Завершить</button>    
         </td>
     </ng-container>

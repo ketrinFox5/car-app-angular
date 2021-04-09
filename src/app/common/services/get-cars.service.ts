@@ -49,16 +49,12 @@ export class GetCarsService {
 
   public updateCar(car: Car) {
     const resultCars = this.cars.map((item) => {
-      console.log(item.id, car.id);
       if (item.id === car.id) {
         return { ...car, id: car.userPhone };
       }
       return item;
     });
     this.setCarsService(resultCars);
-    console.log(resultCars);
     this.cars$.next(this.cars);
-
-    console.log(car);
   }
 }
